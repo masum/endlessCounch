@@ -90,8 +90,7 @@ while true
     couch.bulk(bulk)
     hours = (Time.now - startTime).divmod(60*60)
     mins = hours[1].divmod(60)
-    num = totalCount.to_s.gsub!(/(.*\d)(\d\d\d)/, '\1,\2')
-    puts "#{num} : #{hours[0].to_i}h/#{mins[0].to_i}m/#{mins[1]}s"
+    puts "#{totalCount} : #{hours[0].to_i}h/#{mins[0].to_i}m/#{mins[1]}s"
     bulk["docs"] = []
     count = 0
   end
